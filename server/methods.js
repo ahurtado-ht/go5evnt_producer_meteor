@@ -36,16 +36,13 @@ Meteor.methods({
 
       kafkaSendMessage(msg);
 
-      var gists = Async.runSync(function(done) {
-
-        github.gists.getFromUser({user: 'arunoda'}, function(err, data) {
-          done(null, data);
-        });
-
-
-
-      });
-
-      return gists.result;
+      // ejemplo envio asincrono
+      // var gists = Async.runSync(function(done) {
+      //
+      //   github.gists.getFromUser({user: 'arunoda'}, function(err, data) {
+      //     done(null, data);
+      //   });
+      // });
+      // return gists.result;
     }
   });

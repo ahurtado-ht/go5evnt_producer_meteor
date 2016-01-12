@@ -38,8 +38,12 @@ scaffold
   #
   meteor remove npm-container	 		# manejo de dependencias npm
 	meteor update meteorhacks:npm	 	# manejo de dependencias npm
-	meteor add meteorhacks:npm
-
+	meteor add meteorhacks:npm			# manejo de dependencias npm
+	#
+	meteor add aldeed:autoform			# forms mgmt
+	meteor add aldeed:collection2		# forms mgmt
+	meteor add tsega:bootstrap3-datetimepicker@=3.1.3_3
+	meteor add aldeed:autoform-bs-datetimepicker
 
 
 scaffold alternativa 2
