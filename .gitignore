@@ -1,0 +1,3 @@
+*.old
+npm.log
+/node_modules
