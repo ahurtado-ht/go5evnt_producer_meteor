@@ -1,4 +1,28 @@
 prerrequisitos
+  instalacion dependencias sistema operativo
+		linux:
+			sudo dnf -y install gcc-c++
+			sudo dnf -y install make
+		windows
+			dotnetfw sdk 2 (windows only)
+				- https://www.microsoft.com/en-US/download/details.aspx?id=19988
+				- add the compiler path to system path.:C:\Program Files\Microsoft Visual Studio 10.0\VC\bin
+				- execute the vcvarsall.bat
+					(C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat)
+
+	instalacion utilitarios
+		- git
+		- curl
+		- python 2
+
+		linux
+			# sudo dnf -y install git
+			# sudo dnf -y install curl
+			# sudo dnf -y install python2
+		windows
+			instaladores respectivos (se recomienda python 2.7.10 instlado y en path de usuario)
+
+
 	nodejs 5.4.0 (instalado y en path de usuario)
 		(linux, descargar y editar el archivo /etc/profile adicionando path
 			export PATH=/.work/node-v5.4.0-linux-x64/bin:$PATH:
@@ -7,19 +31,11 @@ prerrequisitos
 		  linux: curl https://install.meteor.com/ | sh
 		  windows: con el instalador
 
-	gitscm
-		linux: sudo yum install git-all o sudo dnf install git-all
 	instalar ide
 		(atom:recommended)
 			- wndows: installer
 			- linux: install the rpm
 
-	python 2.7.10 (instalado y en path de usuario)
-	dotnetfw sdk 2 (windows only)
-		- https://www.microsoft.com/en-US/download/details.aspx?id=19988
-		- add the compiler path to system path.:C:\Program Files\Microsoft Visual Studio 10.0\VC\bin
-		- execute the vcvarsall.bat
-			(C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat)
 
 scaffold
 	meteor create go5evnt_producer_meteor
