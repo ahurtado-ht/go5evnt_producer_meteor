@@ -7,21 +7,19 @@ prerrequisitos
 		  linux: curl https://install.meteor.com/ | sh
 		  windows: con el instalador
 
+	gitscm
+		linux: sudo yum install git-all o sudo dnf install git-all
 	instalar ide
 		(atom:recommended)
 			- wndows: installer
 			- linux: install the rpm
-	gitscm
-
 
 	python 2.7.10 (instalado y en path de usuario)
-	dotnetfw sdk 2
+	dotnetfw sdk 2 (windows only)
 		- https://www.microsoft.com/en-US/download/details.aspx?id=19988
 		- add the compiler path to system path.:C:\Program Files\Microsoft Visual Studio 10.0\VC\bin
 		- execute the vcvarsall.bat
 			(C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat)
-
-
 
 scaffold
 	meteor create go5evnt_producer_meteor
@@ -48,7 +46,7 @@ scaffold
 	meteor add osv:mongo-counter		# manejo de secuencias de numeros
 	meteor add momentjs:moment			# utilitarios para calculos de tipos date
 
-scaffold alternativa 2
+scaffold alternativa 2 (TODO: pendiente verificar)
 	npm install -g iron-meteor
 	iron create go5evnt_producer_meteor
 

@@ -14,8 +14,7 @@ Template.eventoCreate.rendered = function() {
       console.log('error-getNExtId' + error);
     }
   });
-}
-
+};
 
 Template.eventoCreate.helpers({
   defaultValues: function () { // sync call
