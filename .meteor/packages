@@ -30,3 +30,5 @@ aldeed:autoform
 aldeed:collection2
 tsega:bootstrap3-datetimepicker@=3.1.3_3
 aldeed:autoform-bs-datetimepicker
+osv:mongo-counter
+momentjs:moment

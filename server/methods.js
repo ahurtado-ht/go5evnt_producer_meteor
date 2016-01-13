@@ -44,5 +44,15 @@ Meteor.methods({
       //   });
       // });
       // return gists.result;
+    },
+
+    'getNextId':function(sequenceName) {
+        // currentId = Eventos.findOne({},{sort:{id:-1}}).id || 1;
+        // return currentId + 1;
+
+        var sequence = incrementCounter(sequenceName);
+        console.log("Sequence hit : "+sequence);
+        return sequence;
+
     }
   });

@@ -1,58 +1,55 @@
 Template.eventoCreate.events({
   'click button': function () {
     // send the message to queue
-    console.log('send Msg to serverside');
-    /*
-    var msg = {
-        'eventoId':1299999181,
-        'eventoTipo':'E4',
-        'eventoFecha': new Date(),
-        'payload': ''
-    };
-    var callback = new function() {
-      console.log('received data from server');
-    };
+    console.log('ui.clickEvnt');
 
-    Meteor.call('notifyEvent', msg, callback);
-    */
+  }
+});
+
+Template.eventoCreate.rendered = function() {
+  Meteor.call('getNextId', "eventosSeq", function(error, result){
+    if(!error) {
+      Session.set('getNextId.result', result );
+    } else {
+      console.log('error-getNExtId' + error);
+    }
+  });
+}
+
+
+Template.eventoCreate.helpers({
+  defaultValues: function () { // sync call
+    // set Session variable in method callback
+    var nextId = Session.get('getNextId.result');;
+    var userId = Meteor.user().username.toUpperCase();
+
+    // var nextId = Session.get('getNextIdResult');//Meteor.apply('getNextId', 'eventosSeq', { returnStubValue: true } );
+
+    return {
+      eventoFecha: new Date(),
+      eventoId: nextId,
+      eventoDireccionIp: "127.0.0.1",
+      eventoCanal: "APPMOVIL",
+      eventoRespNroConfirmacion: (500000 + nextId),
+      eventoRespCod: "EVT_OK",
+      eventoRespDescripcion: "transaccion al peluche",
+      comercioCod: "0054",
+      cajaId: "CAJA_" + userId,
+      cajeroId: userId,
+      bonoSerial: "" + (800000 + nextId),
+      bonoEstado: "ACTIVO",
+      bonoValor: 20000,
+      bonoFechaVencimiento: moment().add(7, 'days').toDate()
+    };
   }
 });
 
 AutoForm.addHooks('insertEventoForm', {
-  after: {
-    insert: function(error, result) {
-      if (error) {
-        console.log("hook.insert.error", error);
-      } else {
-        console.log("hook.insert.ok", result);
-        // Router.go('showArticle', {_id: result });
-      }
-    } /*,
-    update: function(error, result) {
-       console.log("this: " + this._id);
-      if (error) {
-        console.log("Update Error:", error);
-      } else {
-        console.log("Document updated: " + result);
-        Router.go('showArticle', {_id: result });
-      }
-    }
-    */
-  },
+
   onSuccess: function(formType, result) {
     var self = this;
-
-    console.log('hook.success.ok');
-    /*
-    var msg = {
-        'eventoId':1299999181,
-        'eventoTipo':'E4',
-        'eventoFecha': new Date(),
-        'payload': ''
-    };
-    */
-    var msg = self.insertDoc;
-    console.log(msg);
+    var msg = self.insertDoc; // { 'eventoId':1299999181, 'eventoTipo':'E4', 'eventoFecha': new Date()};
+    // console.log(msg);
     var callback = new function() {
       console.log('received data from server');
     };

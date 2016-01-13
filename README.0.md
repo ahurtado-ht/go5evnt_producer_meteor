@@ -44,7 +44,9 @@ scaffold
 	meteor add aldeed:collection2		# forms mgmt
 	meteor add tsega:bootstrap3-datetimepicker@=3.1.3_3
 	meteor add aldeed:autoform-bs-datetimepicker
-
+	#
+	meteor add osv:mongo-counter		# manejo de secuencias de numeros
+	meteor add momentjs:moment			# utilitarios para calculos de tipos date
 
 scaffold alternativa 2
 	npm install -g iron-meteor

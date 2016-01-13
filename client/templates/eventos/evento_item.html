@@ -2,9 +2,11 @@
 <template name="eventoItem">
   <div class="evento">
     <div class="evento-content">
-	  <h3><a href="{{pathFor 'eventoEdit' _id}}">{{eventoDesc}}</a> <span>{{hechos_relevantes}}</span></h3>
+	  <h3><a href="{{pathFor 'eventoEdit' _id}}">{{eventoId}}</a> <span>{{eventoTipo}}: {{formatDate eventoFecha}}</span></h3>
 	</div>
-	<a href="{{pathFor 'eventoPage'}}" class="discuss btn btn-default">Discuss2</a>
+  <!--
+	<a href="{{pathFor 'eventoPage'}}" class="discuss btn btn-default">Edit</a>
+  -->
   </div>
 
 </template>
