@@ -1,0 +1,5 @@
+<template name="eventoCreate">
+  {{> quickForm collection="Eventos" id="insertEventoForm" type="insert" doc=defaultValues}}
+  <a class="btn" href="{{pathFor 'eventosList'}}">Back</a>
+  <button>notifyEvent</button>
+</template>

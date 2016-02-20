@@ -1,0 +1,9 @@
+<template name="eventosList">
+  <a class="btn" href="{{pathFor 'eventoCreate'}}">New</a>
+  <br />
+  <div class="posts">
+    {{#each eventos}}
+      {{> eventoItem}}
+    {{/each}}
+  </div>
+</template>
