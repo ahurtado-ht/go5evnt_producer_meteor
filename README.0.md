@@ -71,6 +71,9 @@ inicio
 	meteor mongo 								# cliente mongo-consola
 
 	#minimongo
-	meteor 											#iniciar la app
+	nohup meteor --port 3030 & 						#iniciar la app
 	# usuarios
  	luego crear usuario 				# (admin/Welcome1@)
+
+
+
