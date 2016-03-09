@@ -17,7 +17,7 @@ Meteor.methods({
 
         var payloads = [
             //{ topic: 'my-topic-test', messages: [msg], partition: 0 },
-            { topic: 'my-topic-test', messages: JSON.stringify(msg), partition: 0 },
+            { topic: 'bovedaevents', messages: JSON.stringify(msg), partition: 0 },
         ];
         console.log("notifyEvent.req=");
         console.log(msg);
